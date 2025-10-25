@@ -1,4 +1,4 @@
-# ColVBERT (BLIP) - Multimodal RAPTOR for Disaster Documents
+# Multimodal RAPTOR for Disaster Documents Using ColVBERT with BLIP
 
 46 PDF文書 (2378ページ) の津波教訓データベースに対する、ColVBERT (BLIP) ベースのマルチモーダルRAPTOR実装。
 
@@ -324,13 +324,9 @@ data/encoder_comparison_46pdfs/raptor_trees/
 
 このプロジェクトは教育・研究目的で作成されています。
 
-## 👤 作成者
-
-**プロジェクト**: Visual RAPTOR ColBERT
-**ドメイン**: 津波教訓データベース
-**作成日**: 2025年10月24日
-**最終更新**: 2025年10月25日 (2000チャンクTree構築完了 - GitHub登録準備完了)
+##  作成日
+- **プロジェクト**: Visual RAPTOR ColBERT
+- **作成日**: 2025年10月24日
+- **最終更新**: 2025年10月25日 (2000チャンクTree構築完了)
 
 ---
-
-**詳細な移行ガイド**: `MIGRATION_GUIDE_multimodal-raptor-colvbert-blip.md`

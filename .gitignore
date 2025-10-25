@@ -1,0 +1,83 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# データファイル（大容量）
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.db
+*.sqlite
+
+# PDFファイル（大容量）
+data/disaster_visual_documents/*.pdf
+
+# 画像ファイル（大容量）
+data/encoder_comparison_46pdfs/images/*.png
+
+# キャッシュファイル
+data/encoder_comparison_46pdfs/pdf_text_cache.json
+
+# ログファイル（大容量）
+*.log
+data/encoder_comparison_46pdfs/results/*.txt
+
+# モデルキャッシュ
+.cache/
+.transformers/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 一時ファイル
+*.tmp
+*.temp
+
+# テスト結果
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 環境変数
+.env
+.env.local

@@ -667,9 +667,9 @@ class RAPTORRetrieverEval:
     
     def _summarize_batch(self, texts: List[str], batch_label: str = "") -> str:
         """バッチテキストの要約"""
-        # テキストを結合（最大4000文字まで）
+        # テキストを結合（最大8000文字まで）
         combined_text = "\n\n".join(texts)
-        max_length = 4000
+        max_length = 8000
         if len(combined_text) > max_length:
             # 文書を均等にサンプリング
             sample_ratio = max_length / len(combined_text)
@@ -685,7 +685,7 @@ class RAPTORRetrieverEval:
             "以下の災害関連文書を要約してください。\n\n"
             "【要約方針】\n"
             "- 重要な災害事例と教訓を抽出\n"
-            "- 200-300文字で簡潔に\n"
+            "- 300-400文字で簡潔に\n"
             "- 段落形式で記述\n\n"
             "【文書】\n{text}\n\n"
             "【要約】"

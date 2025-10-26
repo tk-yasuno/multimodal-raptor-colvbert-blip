@@ -68,6 +68,7 @@ JA_TO_EN_DICT = {
     '損壊': 'Destruction', '冠水': 'Flooding', '孤立': 'Isolation',
     '停電': 'Blackout', '断水': 'Water Outage', '道路': 'Road', '通行止め': 'Road Closed',
     '寸断': 'Cutoff', '全壊': 'Total Collapse', '半壊': 'Partial Collapse',
+    '液状': 'Liquefaction',
     '浸水': 'Flooding', '水害': 'Flood Damage', '風害': 'Wind Damage',
     
     # 施設
@@ -79,7 +80,8 @@ JA_TO_EN_DICT = {
     # 住民・地域
     '住民': 'Resident', '市民': 'Citizen', '町民': 'Townspeople', '村民': 'Villager',
     '地域': 'Area', '地区': 'District', '町内': 'Neighborhood', '世帯': 'Household',
-    '家族': 'Family', '子供': 'Children', '高齢者': 'Elderly', '要配慮者': 'Vulnerable',
+    '家族': 'Family', '子供': 'Children', '子ども': 'Children', '児童': 'Children',
+    '高齢者': 'Elderly', '要配慮者': 'Vulnerable', '乳幼児': 'Infant', '園児': 'Preschooler',
     '住宅地': 'Residential', '商業地': 'Commercial', '人口': 'Population',
     
     # 対策・計画
@@ -87,6 +89,8 @@ JA_TO_EN_DICT = {
     '訓練': 'Training', '想定': 'Scenario', 'シミュレーション': 'Simulation',
     'ハザードマップ': 'Hazard Map', '防災計画': 'Disaster Plan', '体制': 'System',
     '整備': 'Development', '準備': 'Preparation', '強化': 'Reinforcement',
+    '施策': 'Policy', '方針': 'Guideline', '戦略': 'Strategy', '取組': 'Initiative',
+    '備え': 'Preparedness',
     
     # 時間・フェーズ
     '発生': 'Occurrence', '直後': 'Immediate', '当日': 'Same Day', '翌日': 'Next Day',
@@ -97,9 +101,12 @@ JA_TO_EN_DICT = {
     '日本': 'Japan', '東日本': 'East Japan', '阪神': 'Hanshin', '熊本': 'Kumamoto', '北海道': 'Hokkaido',
     '九州': 'Kyushu', '四国': 'Shikoku', '太平洋': 'Pacific', '日本海': 'Sea of Japan',
     '南海トラフ': 'Nankai Trough', '東海': 'Tokai', '関東': 'Kanto', '東北': 'Tohoku',
-    '中部': 'Chubu', '近畿': 'Kinki', '中国': 'Chugoku', '沖縄': 'Okinawa',
-    '能登半島': 'Noto Peninsula', '能登': 'Noto', '石川': 'Ishikawa', '福島': 'Fukushima',
+    '中部': 'Chubu', '近畿': 'Kinki', '中国': 'Chugoku', '沖縄': 'Okinawa', '関西': 'Kansai',
+    '半島': 'Peninsula', '能登半島': 'Noto Peninsula', '能登': 'Noto', '石川': 'Ishikawa', '福島': 'Fukushima',
     '宮城': 'Miyagi', '岩手': 'Iwate', '淡路': 'Awaji', '東峰': 'Toho', '日田': 'Hita',
+    '登別': 'Noboribetsu', '札幌': 'Sapporo', '仙台': 'Sendai', '神戸': 'Kobe',
+    '広島': 'Hiroshima', '長崎': 'Nagasaki', '鹿児島': 'Kagoshima', '平成': 'Heisei',
+    '沿岸': 'Coastal', '市町': 'City-Town',
     
     # 一般的な動詞・形容詞
     '確認': 'Confirm', '実施': 'Implement', '設置': 'Install', '配置': 'Deploy',
@@ -110,7 +117,8 @@ JA_TO_EN_DICT = {
     # その他の重要語
     '明確': 'Clear', '詳細': 'Detail', '具体': 'Specific', '全体': 'Overall',
     '一部': 'Partial', '多数': 'Many', '少数': 'Few', '大規模': 'Large-scale',
-    '小規模': 'Small-scale', '中規模': 'Medium-scale',
+    '小規模': 'Small-scale', '中規模': 'Medium-scale', '残念': 'Regrettable',
+    '手元': 'On Hand',
     
     # 教訓・経験
     '教訓': 'Lesson', '経験': 'Experience', '事例': 'Case', '記録': 'Record',
@@ -1168,7 +1176,7 @@ if __name__ == "__main__":
     visualize_all_trees(
         pkl_dir=pkl_dir,
         output_dir=output_dir,
-        pattern="scaling_test_tree_2000chunks_*.pkl",  # 2000チャンクのみ
+        pattern="scaling_test_tree_*.pkl",  # 全チャンクサイズ（2000, 3000など）
         use_morphology=True,  # 形態素解析ON: MeCab + UniDic体言止め形式
         top_n=2  # 2つのキーワードを表示（階層的重複を厳密に排除）
     )

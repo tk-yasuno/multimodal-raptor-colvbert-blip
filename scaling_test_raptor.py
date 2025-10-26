@@ -200,8 +200,8 @@ max_chunks = len(visual_documents)
 # # 重複を削除してソート
 # sample_sizes = sorted(list(set(sample_sizes)))
 
-# 2000チャンクのみ実行（combined戦略 vs silhouette戦略の比較）
-sample_sizes = [2000] if 2000 <= max_chunks else [max_chunks]
+# 4000チャンクのみ実行（Combined戦略の大規模テスト２）
+sample_sizes = [4000] if 4000 <= max_chunks else [max_chunks]
 
 print(f"\n実際のチャンク数: {max_chunks}")
 print(f"調整後のテストサイズ: {sample_sizes}")

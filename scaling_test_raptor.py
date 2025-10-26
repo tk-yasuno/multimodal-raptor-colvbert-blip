@@ -200,7 +200,7 @@ max_chunks = len(visual_documents)
 # # 重複を削除してソート
 # sample_sizes = sorted(list(set(sample_sizes)))
 
-# 2000チャンクのみ実行
+# 2000チャンクのみ実行（combined戦略 vs silhouette戦略の比較）
 sample_sizes = [2000] if 2000 <= max_chunks else [max_chunks]
 
 print(f"\n実際のチャンク数: {max_chunks}")
@@ -262,13 +262,21 @@ for test_num, sample_size in enumerate(sample_sizes, 1):
         'use_cross_attention': False
     }
     
+    # クラスタリング評価指標設定
+    # DBI戦略: クラスタ分離度を最大化（k=2バイアスを軽減する試み）
     colbert_system = VisualRAPTORColBERT(
         embeddings_model=embeddings_model,
         llm=llm,
         use_modern_vbert=False,
         colbert_config=colbert_config,
         use_multimodal=True,
-        multimodal_weight=0.3
+        multimodal_weight=0.3,
+        selection_strategy='combined',  # 複数指標の組み合わせ
+        metric_weights={
+            'silhouette': 0.5,  # クラスタ品質（ミクロ視点）- バランス
+            'dbi': 0.5,         # クラスタ分離度（マクロ視点）- バランス
+            'chi': 0.0          # CHI除外（k=2バイアス回避）
+        }
     )
     
     init_time = time.time() - init_start

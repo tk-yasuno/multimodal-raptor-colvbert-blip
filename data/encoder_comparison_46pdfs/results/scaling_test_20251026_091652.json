@@ -1,0 +1,29 @@
+{
+  "timestamp": "20251026_091652",
+  "test_description": "RAPTOR Tree Scaling Test",
+  "sample_sizes": [
+    2000
+  ],
+  "results": [
+    {
+      "test_number": 1,
+      "sample_size": 2000,
+      "init_time": 17.85976219177246,
+      "build_time": 3010.6479139328003,
+      "total_time": 3028.5076761245728,
+      "gpu_memory_before_mb": 15474.0,
+      "gpu_memory_after_mb": 15756.0,
+      "gpu_memory_peak_mb": 15756.0,
+      "tree_depth": 3,
+      "total_nodes": 20,
+      "leaf_nodes": 12,
+      "internal_nodes": 8,
+      "success": true,
+      "log_file": "data\\encoder_comparison_46pdfs\\results\\scaling_test_log_2000chunks_20251026_082623.txt",
+      "avg_silhouette": 0.1786707267165184,
+      "avg_dbi": 2.130648378158705,
+      "avg_chi": 109.37495470046997,
+      "tree_file": "data\\encoder_comparison_46pdfs\\results\\scaling_test_tree_2000chunks_20251026_082623.pkl"
+    }
+  ]
+}
